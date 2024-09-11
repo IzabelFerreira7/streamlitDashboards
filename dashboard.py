@@ -2,9 +2,6 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-
-
-
 st.set_page_config(layout="wide")
 st.markdown("# Análise de Vendas de Mercado")
 st.write("Primeira analise de dados usando streamlit")
@@ -38,11 +35,11 @@ col2.plotly_chart(fig_prod,  use_container_width=True)
 
 city_total = df_filtered.groupby("City")[["Total"]].sum().reset_index()
 fig_city = px.bar(city_total, x="City", y="Total",
-                  title="Fatiramento for filial")
+                  title="Faturamento for Filial")
 col3.plotly_chart(fig_city,  use_container_width=True)
 
 fig_kind = px.pie(df_filtered, values="Total", names="Payment",
-                  title="Faturamento fpor filial")
+                  title="Faturamento por Pagamento")
 col4.plotly_chart(fig_kind,  use_container_width=True)
 
 city_total = df_filtered.groupby("City")[["Rating"]].mean().reset_index()

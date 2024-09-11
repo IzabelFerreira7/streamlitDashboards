@@ -32,7 +32,7 @@ fig_date = px.bar(df_filtered, x="Date", y="Total", color="City",
                   title="Faturamento por dia")
 col1.plotly_chart(fig_date,  use_container_width=True)
 
-fig_prod = px.bar(df_filtered, x="Date", y="Product line",
+fig_prod = px.bar(df_filtered, x="Total", y="Product line",
                    color="City",title="Faturamento por tipo de produto", orientation="h")
 col2.plotly_chart(fig_prod,  use_container_width=True)
 
